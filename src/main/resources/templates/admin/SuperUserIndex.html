@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后台管理</title>
+
+</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+<link rel="stylesheet" href="../../static/css/me.css" th:href="@{/css/me.css}">
+<link rel="stylesheet" href="../../static/css/slidebar.css" th:href="@{/css/slidebar.css}">
+<script type="text/javascript" src="../static/js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+<body>
+<!--导航-->
+<nav class="ui inverted attached segment m-padded-tb-mini m-shadow-small" >
+    <br>
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu">
+            <h2 class="ui teal header item">音乐后台管理系统</h2>
+            <div class="right m-item m-mobile-hide menu">
+                <div class="ui dropdown  item">
+                    <div class="text">
+                        <img class="ui avatar image" src="https://unsplash.it/100/100?image=1005">
+                        五只熊
+                    </div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a href="#" class="item">注销</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+    <br>
+    <br>
+</nav>
+<div class="ui attached pointing menu">
+
+</div>
+<div class="left" style="float:left;_margin-right:-3px;padding: 0px">
+    <div class="nav">
+        <h2>用户管理</h2>
+        <ul>
+            <li><a href="#" th:href="@{/admin/SuperUserManager}">超级管理</a></li>
+        </ul>
+        <h2>设备管理</h2>
+        <ul>
+            <li><a href="#" th:href="@{/admin/SuperPhoneManage}">手机端设备</a></li>
+            <li><a href="#" th:href="@{/admin/SuperLinuxManage}">广告管理端设备</a></li>
+        </ul>
+        <h2>音乐管理</h2>
+        <ul>
+            <li><a href="#" th:href="@{/admin/SuperMusicManage}">歌单</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="right">
+    <!--中间内容-->
+    <div  class="m-container-small m-padded-tb-big">
+        <div class="ui container">
+            <div class="ui success large  message">
+                <h3>Hi,</h3>
+                <p>超级管理员，欢迎登录！</p>
+            </div>
+            <img src="https://unsplash.it/1000/400?image=1005" alt="" class="ui rounded bordered fluid image">
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../static/js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+<script>
+    $(function(){
+        $('.nav h2').on('click', function(){
+            // $(this).next('ul').toggle();
+            $(this).next('ul').slideToggle();
+        })
+    })
+</script>
+</body>
+</html>

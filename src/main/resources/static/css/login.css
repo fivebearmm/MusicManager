@@ -1,0 +1,100 @@
+/* CSS Document */
+
+*{
+	font-size: 9pt;
+	border:0 ;
+	margin: 0;
+	padding: 0;
+	font-family:"微软雅黑";
+}
+body{
+	background-color:#091DD1;
+	background-image:url("../image/light.png");
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.logintop{
+	background-color:#091DD1;
+	background-position: center top;
+	width:100%;
+	height:60px;
+}
+.contain{
+	background-image: url("../image/loginbg3.png");
+	background-repeat: no-repeat;
+	background-position: center top;
+	width:100%;
+	height:600px;
+	overflow: hidden;
+}
+.loginbody{
+	width:100% ;
+	height: 800px;
+	
+	
+}
+.logindiv{
+	background-image:url("../image/logininfo3.png");
+	background-repeat: no-repeat;
+	margin-top:8%;
+	margin-left:35%;
+	width:693px;
+	height: 373px;
+}
+.loginform{
+	margin-top: 8%;
+	margin-left: 35%;
+	padding-top: 70px;
+	height: 250px;
+	width:400px;
+}
+.loginform ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.loginform ul li{
+	margin: 0;
+	padding-bottom: 0;
+	list-style: none;
+	padding-left:25px ;
+	padding-top:29px;
+	padding-right:0 ;
+	
+}
+.loginusr{
+	background-image: url("../image/loginuser.png");
+	width:299px;
+	height:48px;
+	border: none;
+	padding-left: 44px;
+	font-size: 14px;
+}
+
+.loginpwd{
+	background-image:url("../image/loginpassword.png");
+	width:299px;
+	height:48px;
+	border: none;
+	padding-left: 44px;
+	font-size: 14px;
+}
+.loginbtn{
+	width:111px;
+    height: 35pX;
+	background-image:url("../image/buttonbg.png") repeat-x;
+	font-size:14px;
+	font-weight: bold;
+	cursor:pointer;
+}
+.loginbotton{
+	height:25px;
+	width:100%;
+	position: absolute;
+	bottom:20px;
+	text-align: center;
+ }
+p{
+	font-size:30px;
+}
+	

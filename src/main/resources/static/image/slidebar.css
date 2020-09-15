@@ -1,0 +1,44 @@
+body,div{padding: 0 ;margin:0;}
+.left,.right{height: 100%;padding: 0px;}
+.left{float: left;}
+.right{overflow:hidden;}
+ul {
+    padding:0;
+    margin:0;
+    list-style: none;
+}
+.nav {
+    width: 200px;
+}
+.nav h2 {
+    text-align:center;
+    margin:0;
+    font-size: 16px;
+    font-weight: normal;
+    padding: 0px 20px;
+    height: 40px;
+    line-height: 40px;
+    border:1px solid #999;
+    border-bottom:none;
+    background:#00B5AD;
+    cursor: pointer;
+}
+.nav ul {
+    border:1px solid #999;
+    display: none;
+}
+.nav li a{
+    color:#333;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    padding: 0px 20px;
+    height: 30px;
+    line-height: 30px;
+    border-bottom:1px solid #999;
+    background:#1abc9c;
+}
+.nav li:last-child a {
+    border-bottom:none;
+}

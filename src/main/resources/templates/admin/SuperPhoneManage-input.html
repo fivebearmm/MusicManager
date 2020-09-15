@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户新增</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="../../static/lib/editormd/css/editormd.min.css" th:href="@{/css/editormd.min.css}">
+    <link rel="stylesheet" href="../../static/css/me.css" th:href="@{/css/me.css}">
+</head>
+<body>
+
+<!--导航-->
+<nav class="ui inverted attached segment m-padded-tb-mini m-shadow-small" >
+    <br>
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu">
+            <h2 class="ui teal header item">音乐后台管理系统</h2>
+            <div class="right m-item m-mobile-hide menu">
+                <div class="ui dropdown  item">
+                    <div class="text">
+                        <img class="ui avatar image" src="https://unsplash.it/100/100?image=1005">
+                        五只熊
+                    </div>
+                    <i class="dropdown icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+</nav>
+<!--横杠-->
+<div class="ui attached pointing menu"></div>
+
+<!--中间内容-->
+<div  class="m-container-small m-padded-tb-big">
+    <div class="ui container">
+        <form id="phone-form" action="#" method="post" th:object="${phone}" th:action="*{id}==null ? @{/admin/SuperPhoneManage} : @{/admin/SuperPhoneManage/{id}(id=*{id})} "  class="ui form">
+            <input type="hidden" name="id" th:value="*{id}">
+            <div class=" field">
+                <div class="ui left labeled input">
+                    <label class="ui teal basic label">手机名称</label>
+                    <input type="text" name="phonename" placeholder="手机名称" th:value="*{phonename}" >
+                </div>
+            </div>
+                <div class=" field">
+                    <div class="ui left labeled input">
+                        <label class="ui teal basic label">手机型号</label>
+                        <input type="text" name="phonemd" placeholder="手机型号" th:value="*{phonemd}" >
+                    </div>
+                </div>
+                <div class=" field">
+                    <div class="ui left labeled action input">
+                        <label class="ui compact teal basic label">在线状态</label>
+                        <div class="ui fluid selection dropdown">
+                            <input type="hidden" name="phonestatus" th:value="*{phonestatus}">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">在线状态</div>
+                            <div class="menu">
+                                <div class="item" data-value="在线">在线</div>
+                                <div class="item" data-value="下线">下线</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="ui error message"></div>
+            <div class="ui right aligned container">
+                <button type="button" class="ui button" onclick="window.history.go(-1)" >返回</button>
+                <button  type="button" id="save-btn" class="ui teal submit button">提交</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+
+<script>
+
+    $('#save-btn').click(function () {
+        $('#phone-form').submit();
+    });
+
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    $('.ui.dropdown').dropdown({
+        on : 'hover'
+    });
+
+    $('.ui.form').form({
+        fields : {
+            phonename : {
+                identifier: 'phonename',
+                rules: [{
+                    type : 'empty',
+                    prompt: '错误：请输入手机名称'
+                }]
+            },
+            phonemd : {
+                identifier: 'phonemd',
+                rules: [{
+                    type : 'empty',
+                    prompt: '错误：请输入手机型号'
+                }]
+            }
+        }
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户新增</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="../../static/lib/editormd/css/editormd.min.css" th:href="@{/css/editormd.min.css}">
+    <link rel="stylesheet" href="../../static/css/me.css" th:href="@{/css/me.css}">
+</head>
+<body>
+
+<!--导航-->
+<nav class="ui inverted attached segment m-padded-tb-mini m-shadow-small" >
+    <br>
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu">
+            <h2 class="ui teal header item">音乐后台管理系统</h2>
+            <div class="right m-item m-mobile-hide menu">
+                <div class="ui dropdown  item">
+                    <div class="text">
+                        <img class="ui avatar image" src="https://unsplash.it/100/100?image=1005">
+                        五只熊
+                    </div>
+                    <i class="dropdown icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+</nav>
+<!--横杠-->
+<div class="ui attached pointing menu"></div>
+
+<!--中间内容-->
+<div  class="m-container m-padded-tb-big">
+    <div class="ui container">
+        <form id="music-form" action="#" method="post" th:object="${music}" th:action="*{id}==null ? @{/admin/SuperMusicManage} : @{/admin/SuperMusicManage/{id}(id=*{id})} "  class="ui form">
+            <input type="hidden" name="id" th:value="*{id}">
+
+            <div class="field">
+                <div class="ui left labeled input">
+                    <label class="ui teal basic label">歌曲名称</label>
+                    <input type="text" name="musicname" th:value="*{musicname}" placeholder="歌曲名称">
+                </div>
+            </div>
+            <div class="two fields">
+                <div class="field">
+                    <div class="ui left labeled input">
+                        <label class="ui teal basic label">歌手</label>
+                        <input type="text" name="singer" th:value="*{singer}" placeholder="歌手">
+                    </div>
+                </div>
+                <div class=" field">
+                    <div class="ui left labeled action input">
+                        <label class="ui compact teal basic label">状态</label>
+                        <div class="ui fluid selection dropdown">
+                            <input type="hidden" name="musicstaus" th:value="*{musicstaus}">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">状态</div>
+                            <div class="menu">
+                                <div class="item" data-value="发布">发布</div>
+                                <div class="item" data-value="设计中">设计中</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="ui left labeled input">
+                    <label class="ui teal basic label">歌曲简介</label>
+                    <input type="text" name="info" th:value="*{info}" placeholder="歌曲简介">
+                </div>
+            </div>
+            <div class="ui error message"></div>
+
+            <div class="ui right aligned container">
+                <button type="button" class="ui button" onclick="window.history.go(-1)" >返回</button>
+                <button type="button" id="save-btn" class="ui teal button">发布</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+
+<script>
+
+    $('#save-btn').click(function () {
+        $('#music-form').submit();
+    });
+
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    $('.ui.dropdown').dropdown({
+        on : 'hover'
+    });
+
+
+</script>
+</body>
+</html>

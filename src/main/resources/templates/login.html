@@ -1,0 +1,38 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<title>用户登录页面</title>
+	<link rel="stylesheet" href="../static/css/login.css" th:href="@{/css/login.css}">
+</head>
+
+<body>
+	<div class="contain" style="left: -13px; top: -2px;">
+		 <div class="logintop">
+		</div>
+		<div class="loginbody">
+			<div class="logindiv">
+				<form class="loginform" id="loginform" name="loginform">
+					 <ul>
+						 <li>
+							 <input type="text" class="loginusr" id="username" placeholder="用户名">
+						 </li>
+						 <li>
+							 <input type="password" class="loginpwd" id="password" placeholder="密码">
+						 </li>
+						 <li>
+							 <input type="button" class="loginbtn" value="登录" id="loginbtn">
+						 </li>
+					</ul>
+					
+				</form>
+			</div>
+		</div>
+		<div class="loginbotton">
+			<p>Copyright by star-net</p>
+		</div>
+	</div>
+	<div id="content">
+	</div>
+</body>
+<script type="text/javascript" src="../static/js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+</html>

@@ -1,0 +1,60 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<title>用户登录页面</title>
+	<link rel="stylesheet" href="../static/css/login.css" th:href="@{/css/login.css}">
+</head>
+
+<body>
+	<div class="contain" style="left: -13px; top: -2px;">
+		 <div class="logintop">
+		</div>
+		<div class="loginbody">
+			<div class="logindiv">
+				<form class="loginform" id="loginform" name="loginform" method="post" action="#" th:action="@{/admin/login}">
+					 <ul>
+						 <li>
+							 <input type="text" name="username" class="loginusr" id="username" placeholder="用户名">
+						 </li>
+						 <li>
+							 <input type="password" name="password" class="loginpwd" id="password" placeholder="密码">
+						 </li>
+						 <li>
+							 <button  class="loginbtn" id="loginbtn">登 录</button>
+						 </li>
+					</ul>
+
+				</form>
+			</div>
+		</div>
+		<div class="loginbotton">
+			<p>Copyright by star-net</p>
+		</div>
+	</div>
+	<div id="content">
+	</div>
+</body>
+<script type="text/javascript" src="../static/js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+<script>
+	$('#loginform').form({
+		fields : {
+			username : {
+				identifier: 'username',
+				rules: [{
+					type : 'empty',
+					prompt: '请输入用户名'
+				}]
+			},
+			password : {
+				identifier: 'password',
+				rules: [{
+					type : 'empty',
+					prompt: '请输入密码'
+				}]
+			}
+		}
+	});
+</script>
+</html>
